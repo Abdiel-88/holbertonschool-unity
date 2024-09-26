@@ -1479,6 +1479,7 @@ MonoBehaviour:
   player: {fileID: 1231697830}
   offset: {x: 0, y: 2.5, z: -6.25}
   rotationSpeed: 5
+  smoothSpeed: 0.125
 --- !u!1 &689425172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,9 +2258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1d8392ad3bd654eb2c82cc6a5b7c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpForce: 8
-  gravity: 20
+  speed: 10
+  jumpForce: 10
+  gravity: 15
+  cameraTransform: {fileID: 682232267}
+  startPosition: {x: 0, y: 0, z: 0}
+  fallThreshold: -10
+  respawnHeight: 25
 --- !u!4 &1231697830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4575323557493729621, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
