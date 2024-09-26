@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text timerText;  // Reference to the TimerText UI element
+    public bool isRunning = false;  // To control if the timer is running or not
 
     private float startTime;  // Time when the timer starts
-    private bool isRunning = false;  // To control if the timer is running or not
 
     void Update()
     {
