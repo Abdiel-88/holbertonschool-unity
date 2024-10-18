@@ -10853,6 +10853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  airControlMultiplier: 0.5
   jumpForce: 10
   gravity: 18
   cameraTransform: {fileID: 682232267}
@@ -18446,6 +18447,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 297697056546176215, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 0384160002539394a8b170387b69288b, type: 3}
     - target: {fileID: 3124729403793196673, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
       propertyPath: m_Name
       value: TimerCanvas
