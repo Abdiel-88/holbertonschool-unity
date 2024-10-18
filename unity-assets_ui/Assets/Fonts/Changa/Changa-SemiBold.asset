@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Changa-Light SDF
+  m_Name: Changa-SemiBold
   m_EditorClassIdentifier: 
   hashCode: 0
-  material: {fileID: 5816814998892706593}
+  material: {fileID: 3282830556624187467}
   materialHashCode: 0
   m_Version: 1.1.0
-  m_SourceFontFileGUID: ce344caa1f0a52a4f99dfd8638c7afb1
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: ce344caa1f0a52a4f99dfd8638c7afb1, type: 3}
-  m_SourceFontFile: {fileID: 12800000, guid: ce344caa1f0a52a4f99dfd8638c7afb1, type: 3}
+  m_SourceFontFileGUID: 240ef1a42b6dc5447842d1806e274a29
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 240ef1a42b6dc5447842d1806e274a29, type: 3}
+  m_SourceFontFile: {fileID: 12800000, guid: 240ef1a42b6dc5447842d1806e274a29, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Changa
-    m_StyleName: Light
+    m_StyleName: SemiBold
     m_PointSize: 90
     m_Scale: 1
     m_UnitsPerEM: 1000
@@ -41,11 +41,11 @@ MonoBehaviour:
     m_UnderlineThickness: 4.5
     m_StrikethroughOffset: 18
     m_StrikethroughThickness: 4.5
-    m_TabWidth: 23
+    m_TabWidth: 20
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: 5608666664944791709}
+  - {fileID: 1840284007697239541}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_FallbackFontAssetTable: []
   m_CreationSettings:
     sourceFontFileName: 
-    sourceFontFileGUID: ce344caa1f0a52a4f99dfd8638c7afb1
+    sourceFontFileGUID: 240ef1a42b6dc5447842d1806e274a29
     pointSizeSamplingMode: 0
     pointSize: 90
     padding: 9
@@ -134,13 +134,13 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!28 &5608666664944791709
+--- !u!28 &1840284007697239541
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Changa-Light Atlas
+  m_Name: Changa-SemiBold Atlas
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -182,14 +182,14 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!21 &5816814998892706593
+--- !u!21 &3282830556624187467
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Changa-Light Atlas Material
+  m_Name: Changa-SemiBold Atlas Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -218,7 +218,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 5608666664944791709}
+        m_Texture: {fileID: 1840284007697239541}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
