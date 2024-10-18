@@ -608,7 +608,6 @@ Transform:
   - {fileID: 560715337}
   - {fileID: 1776226914}
   - {fileID: 1026835323}
-  - {fileID: 1366806546}
   - {fileID: 2140581360}
   - {fileID: 1882241531}
   - {fileID: 462276617}
@@ -1185,8 +1184,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 257253001}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 297697056546176215, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 0384160002539394a8b170387b69288b, type: 3}
     - target: {fileID: 3124729403793196673, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
       propertyPath: m_Name
       value: TimerCanvas
@@ -3952,11 +3955,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3124729403793196673, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
   m_PrefabInstance: {fileID: 589615621}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1366806546 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4323806227633213866, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
-  m_PrefabInstance: {fileID: 589615621}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1366806550
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5606,3 +5604,4 @@ SceneRoots:
   - {fileID: 404867665}
   - {fileID: 1483096857}
   - {fileID: 1164979164}
+  - {fileID: 589615621}
