@@ -26,6 +26,8 @@ public class MainMenu : MonoBehaviour
     // This function loads the Options scene
     public void Options()
     {
+         // Save the current scene name as the previous scene
+        PlayerPrefs.SetString("PreviousScene", "MainMenu");
         SceneManager.LoadScene("Options");
     }
 
