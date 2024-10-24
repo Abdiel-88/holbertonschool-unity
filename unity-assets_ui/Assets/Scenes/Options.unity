@@ -2581,6 +2581,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ApplyButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8707370205114769045, guid: 925a68f701b94934fb8597c6a36504c3, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707370205114769045, guid: 925a68f701b94934fb8597c6a36504c3, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -296007544, guid: 15d97d723929a21478daef577d1509f7, type: 3}
+    - target: {fileID: 8707370205114769045, guid: 925a68f701b94934fb8597c6a36504c3, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -1259408966, guid: 15d97d723929a21478daef577d1509f7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2598,6 +2610,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackButton
       objectReference: {fileID: 0}
+    - target: {fileID: 2469710596710617059, guid: ef9b1d59957704c4db21ab3761ee18d6, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469710596710617059, guid: ef9b1d59957704c4db21ab3761ee18d6, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -296007544, guid: 15d97d723929a21478daef577d1509f7, type: 3}
+    - target: {fileID: 2469710596710617059, guid: ef9b1d59957704c4db21ab3761ee18d6, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -1259408966, guid: 15d97d723929a21478daef577d1509f7, type: 3}
     - target: {fileID: 2469710596710617059, guid: ef9b1d59957704c4db21ab3761ee18d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
