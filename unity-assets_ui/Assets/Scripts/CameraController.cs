@@ -8,10 +8,10 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;          // Offset from the player
     public float rotationSpeed = 5.0f; // Speed of rotation
     public float smoothSpeed = 0.125f; // Speed of smoothing
-    public bool isInverted = false; // Invert Y-axis
+    public bool isInverted = false;    // Invert Y-axis flag
 
     private float yaw;        // Horizontal rotation
-    private float pitch = 0f;  // Keep pitch neutral to avoid looking up or down
+    private float pitch = 0f; // Vertical rotation
 
     void Start()
     {
@@ -19,21 +19,28 @@ public class CameraController : MonoBehaviour
         Vector3 initialPosition = player.position + player.TransformDirection(offset);
         transform.position = initialPosition;
         transform.LookAt(player);
+
+        // Load the saved invert Y-axis setting
+        isInverted = PlayerPrefs.GetInt("InvertY", 0) == 1;
     }
 
     void LateUpdate()
     {
-        // Check if the game is paused
+        // Check if the game is paused or if WinCanvas is active
         if (Time.timeScale == 0f)
         {
-            return; // Do not allow camera movement when paused
+            return; // Do not allow camera movement when paused or during the win screen
         }
 
         // Get mouse input for rotation
-        yaw += Input.GetAxis("Mouse X") * rotationSpeed;
-        pitch -= Input.GetAxis("Mouse Y") * rotationSpeed * (isInverted ? -1 : 1);
+        float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
+        float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed * (isInverted ? -1 : 1);
 
-        // Clamp the pitch to prevent the camera from rotating too far up or down
+        // Adjust yaw and pitch based on input
+        yaw += mouseX;
+        pitch -= mouseY;
+
+        // Clamp pitch to prevent extreme rotation
         pitch = Mathf.Clamp(pitch, -30f, 45f);
 
         // Calculate the new rotation
@@ -46,5 +53,11 @@ public class CameraController : MonoBehaviour
 
         // Keep the camera looking at the player
         transform.LookAt(player);
+    }
+
+    // Method to set the Y-axis inversion from OptionsMenu
+    public void SetInvertY(bool invert)
+    {
+        isInverted = invert;
     }
 }
