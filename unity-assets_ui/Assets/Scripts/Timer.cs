@@ -11,23 +11,23 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        // Find the FinalTime text component even if it’s inactive
+        // Check and assign FinalTimeText if it's not assigned yet
         if (finalTimeText == null)
         {
-            Text[] allTextComponents = FindObjectsOfType<Text>(true); // Find all Text components, including inactive ones
+            Text[] allTextComponents = FindObjectsOfType<Text>(true); // Find all Text components
             foreach (Text text in allTextComponents)
             {
                 if (text.name == "FinalTime")
                 {
                     finalTimeText = text;
-                    Debug.Log("FinalTimeText assigned programmatically.");
+                    Debug.Log("FinalTimeText assigned in Start.");
                     break;
                 }
             }
 
             if (finalTimeText == null)
             {
-                Debug.LogError("FinalTimeText still not found!");
+                Debug.LogError("FinalTimeText not found in the scene!");
             }
         }
     }

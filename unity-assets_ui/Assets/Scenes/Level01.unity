@@ -10876,77 +10876,33 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1750952488}
   m_SourcePrefab: {fileID: 100100000, guid: b92be708a9c70eb4c9dae243ac39c8f7, type: 3}
---- !u!1 &1231697824 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1697012687277385366, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
-  m_PrefabInstance: {fileID: 2025754333635787902}
-  m_PrefabAsset: {fileID: 0}
---- !u!143 &1231697825
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231697824}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1231697826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231697824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1d8392ad3bd654eb2c82cc6a5b7c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  airControlMultiplier: 1
-  jumpForce: 15
-  gravity: 20
-  cameraTransform: {fileID: 682232267}
-  startPosition: {x: 0, y: 0, z: 0}
-  fallThreshold: -10
-  respawnHeight: 25
 --- !u!4 &1231697830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4575323557493729621, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
   m_PrefabInstance: {fileID: 2025754333635787902}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1231697834
+--- !u!114 &1231697834 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5709771288967370490, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+  m_PrefabInstance: {fileID: 2025754333635787902}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231697824}
+  m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04c9e5cb41c63e542a39d05e288574c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 1982167947}
-  finalTimeText: {fileID: 168143361}
-  isRunning: 0
+--- !u!114 &1231697836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 98093441329741806, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+  m_PrefabInstance: {fileID: 2025754333635787902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1d8392ad3bd654eb2c82cc6a5b7c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1233092959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18542,10 +18498,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8490370039989634457, guid: 9a308ac573c9fba4a829bb200eefbb3a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8965053145393627872, guid: 9a308ac573c9fba4a829bb200eefbb3a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18563,6 +18515,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2017402742606924796, guid: 20688fa1f2dc2e143a3d394c85e057e1, type: 3}
+      propertyPath: winTrigger
+      value: 
+      objectReference: {fileID: 1594832994}
+    - target: {fileID: 2017402742606924796, guid: 20688fa1f2dc2e143a3d394c85e057e1, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1231697836}
     - target: {fileID: 4823931506276422441, guid: 20688fa1f2dc2e143a3d394c85e057e1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18660,16 +18620,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 98093441329741806, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 682232267}
     - target: {fileID: 1697012687277385366, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697012687277385366, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697012687277385366, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4575323557493729621, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
@@ -18712,19 +18668,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5709771288967370490, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1982167947}
+    - target: {fileID: 5709771288967370490, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+      propertyPath: finalTimeText
+      value: 
+      objectReference: {fileID: 168143361}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1697012687277385366, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1231697826}
-    - targetCorrespondingSourceObject: {fileID: 1697012687277385366, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1231697825}
-    - targetCorrespondingSourceObject: {fileID: 1697012687277385366, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1231697834}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
 --- !u!1001 &6865434196910212436
 PrefabInstance:
@@ -18734,10 +18689,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 297697056546176215, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 0384160002539394a8b170387b69288b, type: 3}
     - target: {fileID: 3124729403793196673, guid: 32539ebd5c007954c93fb6ecb2095ee0, type: 3}
       propertyPath: m_Name
       value: TimerCanvas
@@ -18834,14 +18785,14 @@ SceneRoots:
   - {fileID: 682232267}
   - {fileID: 81239387}
   - {fileID: 2025754333635787902}
-  - {fileID: 2114783859}
   - {fileID: 1594832993}
   - {fileID: 6865434196910212436}
+  - {fileID: 1099431660602629529}
+  - {fileID: 1155744109446889538}
+  - {fileID: 971114372}
   - {fileID: 23014588}
   - {fileID: 1045725031}
+  - {fileID: 2114783859}
   - {fileID: 1753404784}
   - {fileID: 501840123}
   - {fileID: 645476708}
-  - {fileID: 971114372}
-  - {fileID: 1099431660602629529}
-  - {fileID: 1155744109446889538}

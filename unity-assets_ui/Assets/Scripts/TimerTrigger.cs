@@ -11,10 +11,23 @@ public class TimerTrigger : MonoBehaviour
             Timer timer = other.GetComponent<Timer>();
 
             // Enable the Timer and start counting
-            if (timer != null && !timer.enabled)
+            if (timer != null)
             {
-                timer.enabled = true;  // Enable the Timer script
-                timer.StartTimer();    // Start the timer
+                if (!timer.enabled)
+                {
+                    timer.enabled = true;  // Enable the Timer script
+                }
+
+                // Start the timer if it's not already running
+                if (!timer.isRunning)
+                {
+                    timer.StartTimer();    // Start the timer
+                    Debug.Log("Timer started successfully.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Timer component not found on the Player!");
             }
         }
     }

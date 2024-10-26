@@ -1037,3 +1037,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941af38547a80d247a20033267e4d26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  winTrigger: {fileID: 0}
