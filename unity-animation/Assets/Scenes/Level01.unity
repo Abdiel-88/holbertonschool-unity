@@ -6591,7 +6591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &682232265
 AudioListener:
   m_ObjectHideFlags: 0
@@ -14622,7 +14622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1683073763
 AudioListener:
   m_ObjectHideFlags: 0
@@ -18790,6 +18790,10 @@ PrefabInstance:
       propertyPath: finalTimeText
       value: 
       objectReference: {fileID: 168143361}
+    - target: {fileID: 6724576297176309053, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

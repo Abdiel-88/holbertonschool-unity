@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 8.0f;
     public float gravity = 20.0f;
     public Transform cameraTransform;
-
+    
     public Vector3 startPosition;
     public float fallThreshold = -10.0f;
     public float respawnHeight = 50.0f;
+
+    public float rotationSpeed = 15.0f; // New rotation speed variable for faster turning
 
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
@@ -31,15 +33,17 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
+        // Get the forward and right directions based on the camera's orientation
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 
-        forward.y = 0f;
+        forward.y = 0f; // Flatten the forward direction to the horizontal plane
         right.y = 0f;
 
         forward.Normalize();
         right.Normalize();
 
+        // Determine the desired movement direction based on input and camera orientation
         Vector3 desiredMoveDirection = (forward * moveVertical + right * moveHorizontal).normalized;
 
         if (controller.isGrounded)
@@ -50,6 +54,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
+            }
+
+            // Rotate the player to face the movement direction more quickly
+            if (desiredMoveDirection != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(desiredMoveDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
             }
         }
         else
@@ -64,8 +75,10 @@ public class PlayerController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
+        // Move the player based on calculated moveDirection
         controller.Move(moveDirection * Time.deltaTime);
 
+        // Respawn if the player falls below a certain height
         if (transform.position.y < fallThreshold)
         {
             RespawnFromSky();
@@ -83,6 +96,6 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection = Vector3.zero;
         canControlInAir = true;
-        startPosition = transform.position; // Reset start position for respawn
+        startPosition = transform.position; // Reset start position for respawn.
     }
 }
