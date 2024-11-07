@@ -18,11 +18,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
+    private Animator animator; // New reference to Animator component
     private bool canControlInAir = true;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>(); // Get Animator from the child model
         startPosition = transform.position;
     }
 
@@ -56,11 +58,18 @@ public class PlayerController : MonoBehaviour
                 moveDirection.y = jumpForce;
             }
 
-            // Rotate the player to face the movement direction more quickly
+            // Rotate the player to face the movement direction
             if (desiredMoveDirection != Vector3.zero)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(desiredMoveDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            }
+
+            // Update the isRunning parameter in the Animator based on movement
+            if (animator != null)
+            {
+                bool isMoving = desiredMoveDirection.magnitude > 0;
+                animator.SetBool("isRunning", isMoving); // Set to true if moving, false if stationary
             }
         }
         else
