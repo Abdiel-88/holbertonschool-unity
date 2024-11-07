@@ -18790,9 +18790,13 @@ PrefabInstance:
       propertyPath: finalTimeText
       value: 
       objectReference: {fileID: 168143361}
-    - target: {fileID: 6724576297176309053, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 5834150404224047217, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5834150404224047217, guid: 2165fb9405c563c45bba6eae6b504b2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.031
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

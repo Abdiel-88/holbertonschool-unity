@@ -131,6 +131,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   fallThreshold: -10
   respawnHeight: 25
+  rotationSpeed: 15
 --- !u!143 &3544013935314754467
 CharacterController:
   m_ObjectHideFlags: 0
@@ -224,6 +225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ty
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 976f411117c53dd45a2a3bc4ecc99b4f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3b63defc5f343424287a3dc6e8c1de83, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
