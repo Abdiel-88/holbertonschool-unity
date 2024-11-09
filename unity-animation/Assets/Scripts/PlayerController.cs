@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,72 +8,77 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 8.0f;
     public float gravity = 20.0f;
     public Transform cameraTransform;
-    
+
     public Vector3 startPosition;
     public float fallThreshold = -10.0f;
     public float respawnHeight = 50.0f;
 
-    public float rotationSpeed = 15.0f; // New rotation speed variable for faster turning
+    public float rotationSpeed = 15.0f;
 
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
-    private Animator animator; // New reference to Animator component
-    private bool canControlInAir = true;
+    private Animator animator;
+    private bool isFalling = false;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>(); // Get Animator from the child model
+        animator = GetComponentInChildren<Animator>();
         startPosition = transform.position;
     }
 
     void Update()
     {
-        if (Time.timeScale == 0f) return; // Prevent movement when paused
+        if (Time.timeScale == 0f) return;
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        // Get the forward and right directions based on the camera's orientation
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 
-        forward.y = 0f; // Flatten the forward direction to the horizontal plane
+        forward.y = 0f;
         right.y = 0f;
 
         forward.Normalize();
         right.Normalize();
 
-        // Determine the desired movement direction based on input and camera orientation
         Vector3 desiredMoveDirection = (forward * moveVertical + right * moveHorizontal).normalized;
 
         if (controller.isGrounded)
         {
+            if (isFalling)
+            {
+                animator.SetBool("isFalling", false);
+                isFalling = false; // Reset falling state when grounded
+            }
+
             moveDirection = desiredMoveDirection * speed;
-            canControlInAir = true;
 
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
+                animator.SetTrigger("Jump");
             }
 
-            // Rotate the player to face the movement direction
             if (desiredMoveDirection != Vector3.zero)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(desiredMoveDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
             }
 
-            // Update the isRunning parameter in the Animator based on movement
-            if (animator != null)
-            {
-                bool isMoving = desiredMoveDirection.magnitude > 0;
-                animator.SetBool("isRunning", isMoving); // Set to true if moving, false if stationary
-            }
+            animator.SetBool("isRunning", desiredMoveDirection.magnitude > 0);
         }
         else
         {
-            if (canControlInAir)
+            // Enable falling state only when initially leaving the ground
+            if (moveDirection.y < 0 && !isFalling)
+            {
+                animator.SetBool("isFalling", true);
+                isFalling = true;
+            }
+
+            if (isFalling)
             {
                 Vector3 airMove = desiredMoveDirection * speed * airControlMultiplier;
                 moveDirection.x = airMove.x;
@@ -84,10 +88,8 @@ public class PlayerController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        // Move the player based on calculated moveDirection
         controller.Move(moveDirection * Time.deltaTime);
 
-        // Respawn if the player falls below a certain height
         if (transform.position.y < fallThreshold)
         {
             RespawnFromSky();
@@ -98,13 +100,16 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector3(startPosition.x, startPosition.y + respawnHeight, startPosition.z);
         moveDirection = Vector3.zero;
-        canControlInAir = false;
+        isFalling = false;
+        animator.SetBool("isFalling", false);
     }
 
     public void ResetPlayer()
     {
         moveDirection = Vector3.zero;
-        canControlInAir = true;
-        startPosition = transform.position; // Reset start position for respawn.
+        isFalling = false;
+        transform.position = startPosition;
+        animator.SetBool("isFalling", false);
+        animator.SetBool("isRunning", false);
     }
 }
