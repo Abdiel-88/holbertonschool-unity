@@ -47,10 +47,15 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            // Check if player has fallen and landed at or below the start position
             if (isFalling)
             {
-                animator.SetBool("isFalling", false);
-                isFalling = false; // Reset falling state when grounded
+                if (transform.position.y <= startPosition.y)
+                {
+                    animator.SetBool("isFalling", false);
+                    animator.SetTrigger("Impact"); // New trigger to play impact animation
+                }
+                isFalling = false;
             }
 
             moveDirection = desiredMoveDirection * speed;
@@ -71,20 +76,15 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Enable falling state only when initially leaving the ground
             if (moveDirection.y < 0 && !isFalling)
             {
                 animator.SetBool("isFalling", true);
                 isFalling = true;
             }
 
-            if (isFalling)
-            {
-                Vector3 airMove = desiredMoveDirection * speed * airControlMultiplier;
-                moveDirection.x = airMove.x;
-                moveDirection.z = airMove.z;
-            }
-
+            Vector3 airMove = desiredMoveDirection * speed * airControlMultiplier;
+            moveDirection.x = airMove.x;
+            moveDirection.z = airMove.z;
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
