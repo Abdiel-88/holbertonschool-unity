@@ -12,6 +12,9 @@ public class WinTrigger : MonoBehaviour
     // Reference to the BackgroundMusic GameObject
     public GameObject backgroundMusic;
 
+    // Reference to the VictoryMusic GameObject
+    public GameObject victoryMusic;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -38,7 +41,7 @@ public class WinTrigger : MonoBehaviour
                     MusicManager musicManager = backgroundMusic.GetComponent<MusicManager>();
                     if (musicManager != null)
                     {
-                        Debug.Log("Calling StopMusic on MusicManager.");
+                        Debug.Log("Stopping background music.");
                         musicManager.StopMusic();
                     }
                     else
@@ -49,6 +52,25 @@ public class WinTrigger : MonoBehaviour
                 else
                 {
                     Debug.LogWarning("BackgroundMusic GameObject is not assigned.");
+                }
+
+                // Play the victory music
+                if (victoryMusic != null)
+                {
+                    AudioSource victoryAudio = victoryMusic.GetComponent<AudioSource>();
+                    if (victoryAudio != null)
+                    {
+                        Debug.Log("Playing victory fanfare.");
+                        victoryAudio.Play();
+                    }
+                    else
+                    {
+                        Debug.LogWarning("AudioSource component not found on VictoryMusic.");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("VictoryMusic GameObject is not assigned.");
                 }
 
                 // Freeze the game
