@@ -9220,6 +9220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 867056503}
+  audioMixer: {fileID: 24100000, guid: 3e51233ab3385bc448cf8275eaea7870, type: 2}
 --- !u!4 &971114372
 Transform:
   m_ObjectHideFlags: 0
